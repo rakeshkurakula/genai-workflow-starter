@@ -1,0 +1,72 @@
+[
+  {
+    "id": "doc_001",
+    "title": "Introduction to Large Language Models",
+    "content": "Large Language Models (LLMs) are artificial intelligence systems designed to understand and generate human language. These models are trained on massive datasets containing text from books, articles, websites, and other sources. The training process enables them to learn patterns in language, allowing them to perform tasks like text completion, translation, summarization, and question answering. Popular examples include GPT-4, Claude, and Gemini. LLMs have revolutionized natural language processing and are being integrated into various applications across industries.",
+    "category": "AI/ML",
+    "tags": ["artificial intelligence", "natural language processing", "machine learning", "deep learning"],
+    "metadata": {
+      "author": "AI Research Team",
+      "created_at": "2024-01-15T10:00:00Z",
+      "updated_at": "2024-01-15T10:00:00Z",
+      "word_count": 89,
+      "language": "en"
+    }
+  },
+  {
+    "id": "doc_002",
+    "title": "Getting Started with Vector Databases",
+    "content": "Vector databases are specialized database systems designed to store, index, and query high-dimensional vector embeddings efficiently. They are essential for applications involving semantic search, recommendation systems, and retrieval-augmented generation (RAG). Popular vector databases include Pinecone, Weaviate, Qdrant, and Chroma. These databases use advanced indexing techniques like HNSW (Hierarchical Navigable Small World) and IVF (Inverted File) to enable fast similarity search across millions or billions of vectors. When choosing a vector database, consider factors like scalability, query performance, metadata filtering capabilities, and integration options.",
+    "category": "Database",
+    "tags": ["vector database", "embeddings", "similarity search", "RAG", "semantic search"],
+    "metadata": {
+      "author": "Database Engineering Team",
+      "created_at": "2024-01-20T14:30:00Z",
+      "updated_at": "2024-01-20T14:30:00Z",
+      "word_count": 108,
+      "language": "en"
+    }
+  },
+  {
+    "id": "doc_003",
+    "title": "Building RAG Applications",
+    "content": "Retrieval-Augmented Generation (RAG) is a technique that combines the power of large language models with external knowledge retrieval. In a RAG system, relevant documents are first retrieved from a knowledge base using semantic search, then provided as context to the language model for generating responses. This approach helps reduce hallucinations, provides up-to-date information, and enables domain-specific knowledge integration. Key components of a RAG system include: document preprocessing and chunking, embedding generation, vector storage, retrieval mechanisms, and prompt engineering for context integration.",
+    "category": "AI/ML",
+    "tags": ["RAG", "retrieval augmented generation", "knowledge base", "context", "embeddings"],
+    "metadata": {
+      "author": "AI Architecture Team",
+      "created_at": "2024-01-25T09:15:00Z",
+      "updated_at": "2024-01-25T09:15:00Z",
+      "word_count": 97,
+      "language": "en"
+    }
+  },
+  {
+    "id": "doc_004",
+    "title": "Docker Best Practices for AI Applications",
+    "content": "When containerizing AI applications with Docker, follow these best practices: Use official base images when possible, minimize image layers, leverage multi-stage builds to reduce image size, set appropriate resource limits for CPU and memory, use .dockerignore to exclude unnecessary files, implement proper health checks, and use non-root users for security. For ML models, consider using specialized base images like nvidia/pytorch or tensorflow/tensorflow. Pin dependency versions to ensure reproducibility, and use volume mounts for model artifacts and training data. Configure proper logging and monitoring for production deployments.",
+    "category": "DevOps",
+    "tags": ["docker", "containerization", "deployment", "AI applications", "best practices"],
+    "metadata": {
+      "author": "DevOps Team",
+      "created_at": "2024-01-30T16:45:00Z",
+      "updated_at": "2024-01-30T16:45:00Z",
+      "word_count": 115,
+      "language": "en"
+    }
+  },
+  {
+    "id": "doc_005",
+    "title": "Model Context Protocol (MCP) Overview",
+    "content": "The Model Context Protocol (MCP) is a standardized protocol that enables AI models to securely connect to external data sources and tools. MCP allows language models to access real-time information, interact with APIs, query databases, and execute functions while maintaining security and privacy. The protocol defines how models can request context, handle authentication, and manage data access permissions. MCP servers act as intermediaries that provide specific capabilities like file system access, database queries, or API integrations. This architecture enables more powerful and context-aware AI applications.",
+    "category": "AI/ML",
+    "tags": ["MCP", "model context protocol", "AI integration", "external tools", "protocol"],
+    "metadata": {
+      "author": "Protocol Design Team",
+      "created_at": "2024-02-05T11:20:00Z",
+      "updated_at": "2024-02-05T11:20:00Z",
+      "word_count": 102,
+      "language": "en"
+    }
+  }
+]
