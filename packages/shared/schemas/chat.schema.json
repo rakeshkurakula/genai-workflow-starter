@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Chat Schema",
+  "description": "Schema for chat messages and conversations",
+  "definitions": {
+    "message": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique message identifier"
+        },
+        "role": {
+          "type": "string",
+          "enum": ["user", "assistant", "system"],
+          "description": "Role of the message sender"
+        },
+        "content": {
+          "type": "string",
+          "description": "Message content"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the message was created"
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "model": {
+              "type": "string",
+              "description": "AI model used (for assistant messages)"
+            },
+            "usage": {
+              "type": "object",
+              "properties": {
+                "prompt_tokens": {
+                  "type": "integer"
+                },
+                "completion_tokens": {
+                  "type": "integer"
+                },
+                "total_tokens": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      },
+      "required": ["id", "role", "content", "timestamp"]
+    },
+    "conversation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique conversation identifier"
+        },
+        "title": {
+          "type": "string",
+          "description": "Conversation title"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/message"
+          },
+          "description": "Array of messages in the conversation"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the conversation was created"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the conversation was last updated"
+        },
+        "settings": {
+          "type": "object",
+          "properties": {
+            "model": {
+              "type": "string",
+              "description": "Default model for the conversation"
+            },
+            "temperature": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 2,
+              "description": "Sampling temperature"
+            },
+            "max_tokens": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Maximum tokens for responses"
+            }
+          }
+        }
+      },
+      "required": ["id", "title", "messages", "created_at", "updated_at"]
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/definitions/message"
+    },
+    {
+      "$ref": "#/definitions/conversation"
+    }
+  ]
+}
