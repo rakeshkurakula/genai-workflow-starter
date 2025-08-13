@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Tool Schema",
+  "description": "Schema for AI tool definitions",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the tool"
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name of the tool"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of what the tool does"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version of the tool"
+    },
+    "parameters": {
+      "type": "object",
+      "description": "JSON Schema defining the tool's input parameters",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["object"]
+        },
+        "properties": {
+          "type": "object"
+        },
+        "required": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["type", "properties"]
+    },
+    "returns": {
+      "type": "object",
+      "description": "JSON Schema defining the tool's return value",
+      "properties": {
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": ["type"]
+    },
+    "category": {
+      "type": "string",
+      "enum": ["search", "analysis", "generation", "transformation", "utility"],
+      "description": "Category of the tool"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags for categorizing and searching tools"
+    }
+  },
+  "required": ["id", "name", "description", "version", "parameters", "returns"]
+}
