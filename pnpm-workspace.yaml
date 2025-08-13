@@ -1,0 +1,46 @@
+# pnpm workspace configuration
+# Defines the workspace structure for the GenAI Workflow Starter monorepo
+
+packages:
+  # Application packages
+  - 'apps/*'
+  
+  # Shared packages and libraries
+  - 'packages/*'
+  - 'packages/shared/*'
+  
+  # Agent packages
+  - 'agents'
+  
+  # Tool packages
+  - 'tools/*'
+  
+  # MCP server packages
+  - 'mcp/*'
+  
+  # Documentation sites (if using Docusaurus, VitePress, etc.)
+  - 'docs'
+  
+  # Exclude certain directories
+  - '!**/node_modules/**'
+  - '!**/dist/**'
+  - '!**/build/**'
+  - '!**/.next/**'
+  - '!**/.turbo/**'
+  
+# Global settings for workspace
+catalog:
+  # Shared dependencies across the workspace
+  '@types/node': '^20.0.0'
+  typescript: '^5.0.0'
+  prettier: '^3.0.0'
+  eslint: '^8.0.0'
+  jest: '^29.0.0'
+  vitest: '^1.0.0'
+  turbo: '^1.10.0'
+  
+# Workspace-specific settings
+workspace-config:
+  link-workspace-packages: deep
+  shared-workspace-lockfile: true
+  auto-install-peers: true
